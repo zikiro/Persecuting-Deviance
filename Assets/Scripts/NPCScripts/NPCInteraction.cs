@@ -15,6 +15,7 @@ public class NPCInteraction : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
 	
 	}
 	
