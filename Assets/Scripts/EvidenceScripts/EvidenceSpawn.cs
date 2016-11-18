@@ -26,7 +26,7 @@ public class EvidenceSpawn : MonoBehaviour {
 
 
 
-      //  randomSpawn = Random.Range(0, (spawnAreas + 1));
+        randomSpawn = Random.Range(0, (spawnAreas + 1));
 
         if (randomSpawn == 1)
         {
@@ -85,7 +85,7 @@ public class EvidenceSpawn : MonoBehaviour {
         evidencePos.y = Random.Range(minPosy, maxPosy);
 
 
-       // itemSpawn = Random.Range(0, 2);
+       itemSpawn = Random.Range(0, 2);
 
         if (itemSpawn == 1)
         {
