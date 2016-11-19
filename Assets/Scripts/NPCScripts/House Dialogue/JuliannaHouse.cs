@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class JuliannaHouse : MonoBehaviour {
 	public GameObject npcChat;
 	public Text npcText;
 	private float nextChat;
@@ -33,12 +33,13 @@ public class NewBehaviourScript : MonoBehaviour {
 		{
 			Time.timeScale = 1;
 			npcChat.SetActive(false);
-			endScene = false;
+            playerChat.SetActive(false);
+            endScene = false;
 			sceneCount = 0;
 		}
 
 		//Chat Dialog
-		if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
+		if (Time.timeScale == 0 && sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
 		{
 			npcChat.SetActive(false);
 			playerChat.SetActive(true);
