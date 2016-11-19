@@ -147,7 +147,6 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_4")
         {
-            lPressed = true;
             jPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
