@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CourtMenu : MonoBehaviour {
     public GameObject accusedMenu;
-    public bool endScene;
+    public bool endScene = false;
     public GameObject npc1;
     public GameObject npc2;
     public GameObject npc3;
@@ -33,6 +33,15 @@ public class CourtMenu : MonoBehaviour {
     public Text endGame;
     public float loseTime = 1000000000000;
     public float endGameTime;
+    public float onStandTime = 100000000000000;
+    public int sceneCount;
+    public GameObject npcChat;
+    public Text npcText;
+    private float nextChat;
+    private float chatInterval = .09f;
+    public GameObject playerChat;
+    public Text playerText;
+    public bool mEnd = false;
 
     // Use this for initialization
     void Start () {
@@ -65,6 +74,7 @@ public class CourtMenu : MonoBehaviour {
 
         if (mPressed == true && jPressed == true && hPressed == true)
         {
+            accusedMenu.SetActive(false);
             mPressed = false;
             jPressed = false;
             hPressed = false;
@@ -73,6 +83,7 @@ public class CourtMenu : MonoBehaviour {
         }
         else if (lPressed == true)
         {
+            accusedMenu.SetActive(false);
             lPressed = false;
             endGame.text = "YOU CONVICTED AN INNOCENT PERSON!" + System.Environment.NewLine + "YOU LOSE!";
             loseTime = Time.time + 5;
@@ -81,7 +92,7 @@ public class CourtMenu : MonoBehaviour {
 
         if (Time.time > loseTime)
         {
-            SceneManager.LoadScene("Village");
+            SceneManager.LoadScene("MainMenu");
         }
 
     }
@@ -111,7 +122,9 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
-            accusedMenu.SetActive(false);
+
+            
+
         }
         if (WitchChoice == "Choice_2")
         {
@@ -159,7 +172,7 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
-            accusedMenu.SetActive(false);
+            
         }
         if (WitchChoice == "Choice_5")
         {
@@ -223,7 +236,7 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
-            accusedMenu.SetActive(false);
+            
         }
         if (WitchChoice == "Choice_9")
         {

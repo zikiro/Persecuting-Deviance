@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NPCHouse2.unity
   - enabled: 1
     path: Assets/Scenes/NPCHouse3.unity
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity

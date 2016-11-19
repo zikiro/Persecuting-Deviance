@@ -4,6 +4,7 @@ using System.Collections;
 public class CallToTheStand : MonoBehaviour {
 
     public bool onStand = false;
+    public GameObject standPosition;
     public GameObject seatPosition;
     private Transform standTarget;
     private Transform seatTarget;
@@ -12,7 +13,7 @@ public class CallToTheStand : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        GameObject standPosition = GameObject.FindGameObjectWithTag("StandPosition");
+        
 
         standTarget = standPosition.transform;
         seatTarget = seatPosition.transform;
