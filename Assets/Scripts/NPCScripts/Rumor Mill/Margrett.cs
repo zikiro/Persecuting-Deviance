@@ -30,16 +30,17 @@ void Update () {
 	//End Chatting
 	if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.Space) && endScene == true)
 	{
-		Time.timeScale = 1;
-		npcChat.SetActive(false);
-		endScene = false;
-		sceneCount = 0;
-	}
+            Time.timeScale = 1;
+            playerChat.SetActive(false);
+            npcChat.SetActive(false);
+            endScene = false;
+            sceneCount = 0;
+        }
 
-	//Chat Dialog
-	if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
-	{
-			npcText.text = "Villager: "+System.Environment.NewLine+"I heard of some of the townsfolk having intense random pains.";
+        //Chat Dialog
+        if (Time.timeScale == 0 && sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            npcText.text = "Villager: "+System.Environment.NewLine+"I heard of some of the townsfolk having intense random pains.";
 
 
 	}

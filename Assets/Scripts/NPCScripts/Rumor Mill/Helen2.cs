@@ -31,13 +31,14 @@ void Update () {
 	if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.Space) && endScene == true)
 	{
 		Time.timeScale = 1;
-		npcChat.SetActive(false);
+        playerChat.SetActive(false);
+        npcChat.SetActive(false);
 		endScene = false;
 		sceneCount = 0;
 	}
 
 	//Chat Dialog
-	if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
+	if (Time.timeScale == 0 && sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
 	{
 		npcChat.SetActive(false);
 		playerChat.SetActive(true);

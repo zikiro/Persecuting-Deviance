@@ -30,16 +30,17 @@ public class Julianna2 : MonoBehaviour {
 		//End Chatting
 		if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.Space) && endScene == true)
 		{
-			Time.timeScale = 1;
-			npcChat.SetActive(false);
-			endScene = false;
-			sceneCount = 0;
-		}
+            Time.timeScale = 1;
+            playerChat.SetActive(false);
+            npcChat.SetActive(false);
+            endScene = false;
+            sceneCount = 0;
+        }
 
-		//Chat Dialog
-		if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
-		{
-			npcChat.SetActive(false);
+        //Chat Dialog
+        if (Time.timeScale == 0 && sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            npcChat.SetActive(false);
 			playerChat.SetActive(true);
 			playerText.text = "Kramer: " +System.Environment.NewLine+ "Do you know a woman by the name of Julianna?";
 		}
