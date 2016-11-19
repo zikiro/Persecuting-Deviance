@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CourtMenu : MonoBehaviour {
     public GameObject accusedMenu;
@@ -24,6 +26,13 @@ public class CourtMenu : MonoBehaviour {
     private Transform npc8Target;
     private Transform npc9Target;
     private Transform npc10Target;
+    public bool mPressed = false;
+    public bool jPressed = false;
+    public bool hPressed = false;
+    public bool lPressed = false;
+    public Text endGame;
+    public float loseTime = 1000000000000;
+    public float endGameTime;
 
     // Use this for initialization
     void Start () {
@@ -54,6 +63,27 @@ public class CourtMenu : MonoBehaviour {
             endScene = false;
         }
 
+        if (mPressed == true && jPressed == true && hPressed == true)
+        {
+            mPressed = false;
+            jPressed = false;
+            hPressed = false;
+            endGame.text = "YOU WIN!";
+            loseTime = Time.time + 5;
+        }
+        else if (lPressed == true)
+        {
+            lPressed = false;
+            endGame.text = "YOU CONVICTED AN INNOCENT PERSON!" + System.Environment.NewLine + "YOU LOSE!";
+            loseTime = Time.time + 5;
+        }
+
+
+        if (Time.time > loseTime)
+        {
+            SceneManager.LoadScene("Village");
+        }
+
     }
 
     void OnTriggerStay2D(Collider2D accusedCall)
@@ -69,6 +99,7 @@ public class CourtMenu : MonoBehaviour {
     {
         if (WitchChoice == "Choice_1")
         {
+            mPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = true;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -84,6 +115,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_2")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = true;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -99,6 +131,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_3")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = true;
@@ -114,6 +147,8 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_4")
         {
+            lPressed = true;
+            jPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -129,6 +164,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_5")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -144,6 +180,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_6")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -159,6 +196,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_7")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -174,6 +212,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_8")
         {
+            hPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -189,6 +228,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_9")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -204,6 +244,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_10")
         {
+            lPressed = true;
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;

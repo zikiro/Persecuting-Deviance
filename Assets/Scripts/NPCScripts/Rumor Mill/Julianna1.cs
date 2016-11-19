@@ -12,8 +12,8 @@ public class Julianna1 : MonoBehaviour {
 	public int sceneCount;
 	public bool endScene = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 
 	}
@@ -59,7 +59,6 @@ public class Julianna1 : MonoBehaviour {
 			endScene = true;
 
 		}
-
 
 
 	}
