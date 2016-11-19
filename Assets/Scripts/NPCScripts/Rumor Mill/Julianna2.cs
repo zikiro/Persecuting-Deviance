@@ -48,7 +48,7 @@ public class Julianna2 : MonoBehaviour {
 		{
 			playerChat.SetActive(false);
 			npcChat.SetActive(true);
-			npcText.text = "Villager: "+System.Environment.NewLine+"he one who lives near the center of town. Of course, she’s the daughter of a She-Devil.";
+			npcText.text = "Villager: "+System.Environment.NewLine+"The one who lives near the center of town? Of course, she’s the daughter of a She-Devil.";
 		}
 		if (sceneCount == 2 && Input.GetKeyDown(KeyCode.Space))
 		{
