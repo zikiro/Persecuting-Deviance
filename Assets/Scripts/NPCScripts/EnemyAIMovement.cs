@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAIMovement : MonoBehaviour {
 
-    private Transform target;
+
     public int moveSpeed;
     public float playerRange;
     public LayerMask playerLayer;
@@ -22,9 +22,6 @@ public class EnemyAIMovement : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        target = player.transform;
         //Initiating the enemy's defined roaming area.
         xStart = transform.position.x;
         yStart = transform.position.y;
@@ -47,19 +44,13 @@ public class EnemyAIMovement : MonoBehaviour {
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
 
         //Visual display to see what target it's searching for.
-        Debug.DrawLine(target.position, transform.position, Color.yellow);
         //Visual display to see the next location enemy is heading towards.
         Debug.DrawLine(destination, transform.position, Color.green);
 
-        //If the enemy is in range of the player it will follow after player to any location.
-        if (playerInRange)
-        {
 
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        }
+        //If the enemy is in range of the player it will follow after player to any location.
         //If it's not in range of player will find a random location in it's defined area.
-        else
-        {
+
             //Work around for all enemies going to position 0,0,0 for first destination.
             if (destination != new Vector3(0, 0, 0))
             {
@@ -82,7 +73,7 @@ public class EnemyAIMovement : MonoBehaviour {
             {
                 destination = new Vector3(randomX, randomY, 0);
             }
-        }
+ 
 
 
         
