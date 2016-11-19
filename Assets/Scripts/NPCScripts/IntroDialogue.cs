@@ -1,4 +1,8 @@
-﻿
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class IntroDialogue : MonoBehaviour {
 public GameObject npcChat;
 public Text npcText;
 private float nextChat;

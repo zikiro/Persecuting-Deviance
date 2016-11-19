@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class NPCInteraction : MonoBehaviour {
+public class Julianna : MonoBehaviour {
 	public GameObject npcChat;
 	public Text npcText;
 	private float nextChat;
