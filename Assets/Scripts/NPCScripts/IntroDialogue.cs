@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-
-public class NPCInteraction : MonoBehaviour {
+﻿
 public GameObject npcChat;
 public Text npcText;
 private float nextChat;
@@ -39,37 +35,18 @@ void Update () {
 	//Chat Dialog
 	if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
 	{
-		npcChat.SetActive(false);
-		playerChat.SetActive(true);
-		playerText.text = "Kramer: " +System.Environment.NewLine+ "Can you provide me with details concerning Helena's sins?";
+		npcText.text = "Pope: " + System.Environment.NewLine + "I hearby present you, Henrich Kramer, with the papal bull, Summis desiderantes affectibus, which you requested.\n Kramer. Now you have the power to persecute witchcraft as you wish in Germany, free of restraint from local authorities.";
 
 
 	}
 	if (sceneCount == 1 && Input.GetKeyDown(KeyCode.Space))
 	{
-		playerChat.SetActive(false);
-		npcChat.SetActive(true);
-		npcText.text = "Villager: "+System.Environment.NewLine+"Helena has been practicing sexually deviant acts.";
-
-	}
-	if (sceneCount == 2 && Input.GetKeyDown(KeyCode.Space))
-	{
 		npcChat.SetActive(false);
 		playerChat.SetActive(true);
-		playerText.text = "Kramer: " +System.Environment.NewLine+ "Is it true?";
-
-
-	}
-	if (sceneCount == 3 && Input.GetKeyDown(KeyCode.Space))
-	{
-		playerChat.SetActive(false);
-		npcChat.SetActive(true);
-		npcText.text = "Villager: "+System.Environment.NewLine+"It’s only what I’ve heard sir.";
+		playerText.text = "Kramer: " + System.Environment.NewLine + "Thank you, your high holiness. I will use this to cleanse this country for God.";
 		endScene = true;
 
 	}
-
-
 
 
 

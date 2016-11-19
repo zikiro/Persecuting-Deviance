@@ -39,38 +39,32 @@ void Update () {
 	//Chat Dialog
 	if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
 	{
-		npcChat.SetActive(false);
-		playerChat.SetActive(true);
-		playerText.text = "Kramer: " +System.Environment.NewLine+ "Can you provide me with details concerning Helena's sins?";
+		npcText.text = "Villager: "+System.Environment.NewLine+"Goodness, I just cannot stand that Helena one more minute!";
 
 
 	}
 	if (sceneCount == 1 && Input.GetKeyDown(KeyCode.Space))
 	{
-		playerChat.SetActive(false);
-		npcChat.SetActive(true);
-		npcText.text = "Villager: "+System.Environment.NewLine+"Helena has been practicing sexually deviant acts.";
+		npcChat.SetActive(false);
+		playerChat.SetActive(true);
+		playerText.text = "Kramer: " +System.Environment.NewLine+ "Why? What has she done?";
 
 	}
 	if (sceneCount == 2 && Input.GetKeyDown(KeyCode.Space))
 	{
-		npcChat.SetActive(false);
-		playerChat.SetActive(true);
-		playerText.text = "Kramer: " +System.Environment.NewLine+ "Is it true?";
-
+		playerChat.SetActive(false);
+		npcChat.SetActive(true);
+		npcText.text = "Villager: "+System.Environment.NewLine+"She’s so spiteful, always threatening everyone if she doesn’t get her way. This time, when I accidentally stepped in her garden, she screeched at me!";
 
 	}
 	if (sceneCount == 3 && Input.GetKeyDown(KeyCode.Space))
 	{
-		playerChat.SetActive(false);
-		npcChat.SetActive(true);
-		npcText.text = "Villager: "+System.Environment.NewLine+"It’s only what I’ve heard sir.";
+		npcChat.SetActive(false);
+		playerChat.SetActive(true);
+		playerText.text = "Kramer: " +System.Environment.NewLine+ "Hmmm....." +System.Environment.NewLine+ "Sounds like quite the temperament. Maybe I should pay some attention to this Helena.";
 		endScene = true;
 
 	}
-
-
-
 
 
 

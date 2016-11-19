@@ -1,4 +1,8 @@
-﻿
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class NPCInteraction : MonoBehaviour {
 public GameObject npcChat;
 public Text npcText;
 private float nextChat;
@@ -35,7 +39,7 @@ void Update () {
 	//Chat Dialog
 	if (sceneCount == 0 && Input.GetKeyDown(KeyCode.Space))
 	{
-		npcText.text = "I heard Helena has been out and about late at night.";
+		npcText.text = "Villager: "+System.Environment.NewLine+"I heard Helena has been out and about late at night.";
 
 
 	}
@@ -43,14 +47,14 @@ void Update () {
 	{
 		npcChat.SetActive(false);
 		playerChat.SetActive(true);
-		playerText.text = "Can you provide me with a place and time?"+ System.Environment.NewLine + "Where does she live?";
+		playerText.text = "Kramer: " +System.Environment.NewLine+ "Can you provide me with a place and time?"+ System.Environment.NewLine + "Where does she live?";
 
 	}
 	if (sceneCount == 2 && Input.GetKeyDown(KeyCode.Space))
 	{
 		playerChat.SetActive(false);
 		npcChat.SetActive(true);
-		npcText.text = "On the other side of the river, close to the church.";
+		npcText.text = "Villager: "+System.Environment.NewLine+"On the other side of the river, close to the church.";
 		endScene = true;
 
 	}
