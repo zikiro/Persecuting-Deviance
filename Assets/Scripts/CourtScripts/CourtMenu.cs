@@ -110,7 +110,7 @@ public class CourtMenu : MonoBehaviour {
     {
         if (WitchChoice == "Choice_1")
         {
-            mPressed = true;
+            
             npc1Target.GetComponent<CallToTheStand>().onStand = true;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -122,8 +122,9 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
+            accusedMenu.SetActive(false);
 
-            
+
 
         }
         if (WitchChoice == "Choice_2")
@@ -160,7 +161,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_4")
         {
-            jPressed = true;
+            
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -172,7 +173,7 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
-            
+            accusedMenu.SetActive(false);
         }
         if (WitchChoice == "Choice_5")
         {
@@ -224,7 +225,7 @@ public class CourtMenu : MonoBehaviour {
         }
         if (WitchChoice == "Choice_8")
         {
-            hPressed = true;
+            
             npc1Target.GetComponent<CallToTheStand>().onStand = false;
             npc2Target.GetComponent<CallToTheStand>().onStand = false;
             npc3Target.GetComponent<CallToTheStand>().onStand = false;
@@ -236,7 +237,7 @@ public class CourtMenu : MonoBehaviour {
             npc9Target.GetComponent<CallToTheStand>().onStand = false;
             npc10Target.GetComponent<CallToTheStand>().onStand = false;
             Time.timeScale = 1;
-            
+            accusedMenu.SetActive(false);
         }
         if (WitchChoice == "Choice_9")
         {

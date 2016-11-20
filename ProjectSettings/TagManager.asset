@@ -6,6 +6,9 @@ TagManager:
   tags:
   - House
   - StandPosition
+  - Helena
+  - Margrett
+  - Juliana
   layers:
   - Default
   - TransparentFX

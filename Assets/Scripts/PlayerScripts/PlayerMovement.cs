@@ -9,16 +9,41 @@ public class PlayerMovement : MonoBehaviour {
     private Animator anim;
     private bool playerMoving;
     private Vector2 lastMove;
+    public GameObject pause;
+
 
     // Use this for initialization
     void Start()
     {
+        
         anim = GetComponent<Animator>();
 
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+            {
+            Time.timeScale = 0;
+            pause.SetActive(true);
+            }
+            else
+            {
+                
+                    Time.timeScale = 1;
+                    pause.SetActive(false);
+
+              
+            }
+
+        }
+
+    }
+
+        // Update is called once per frame
+        void FixedUpdate()
     {
 
         
