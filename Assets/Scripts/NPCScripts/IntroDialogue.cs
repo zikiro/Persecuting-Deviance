@@ -24,6 +24,7 @@ void Start () {
 void Update () {
         if (Time.timeScale == 1 && sceneCount == -1)
         {
+            npcText.text = "";
             Time.timeScale = 0;
             sceneCount++;
         }
@@ -31,17 +32,20 @@ void Update () {
         //Scene Counter
         if (Time.timeScale == 0 && Input.GetKeyUp(KeyCode.Space))
 	{
-		sceneCount++;
+            
+            sceneCount++;
 	}
 
 	//End Chatting
 	if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.Space) && endScene == true)
 	{
-		Time.timeScale = 1;
+            npcText.text = "";
+            Time.timeScale = 1;
 		npcChat.SetActive(false);
 		endScene = false;
-		sceneCount = 0;
+		
             SceneManager.LoadScene("Village");
+            
         }
 
 	//Chat Dialog
