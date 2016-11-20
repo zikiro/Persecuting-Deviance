@@ -21,6 +21,7 @@ public class HouseEnter : MonoBehaviour {
         if (houseCollision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("" + houseScene);
+            
         }
     }
 
